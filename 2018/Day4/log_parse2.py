@@ -43,39 +43,39 @@ f1.close()
 sum_dict = dict.fromkeys(guard_dict,[])
 # print(sum_dict)
 
-for key in guard_dict:
+max_max_count = 0
+max_max_index = 0
+method_2_guard = 0
+for key in guard_dict: # For a given guard:
     diff_sum = 0
-    max_max_count = 0
-    max_max_index = 0
-    method_2_guard = 0
     n=0
-    while n < len(guard_dict[key]):
+    index_count = [0]*60
+    while n < len(guard_dict[key]): # For a given minute range? (items in list)
+        # print(key+" : "+str(guard_dict[key]))
         diff = guard_dict[key][n+1] - guard_dict[key][n]
         diff_sum+=diff
         max_count=0
         i=0
-        while i<60:
-            index_count=0
+        while i<60: # For a specific minute
+            # print(str(guard_dict[key][n])+" >= "+str(i)+" < "+str(guard_dict[key][n+1])+" ?")
             if i >= guard_dict[key][n] and i < guard_dict[key][n+1]:
-                    index_count+=1
-            if index_count > max_count:
-                max_count = index_count
+                index_count[i]+=1
+            if index_count[i] > max_count:
+                # print(index_count)
+                max_count = index_count[i]
                 max_index = i
+                max_key = key
+                # print(max_key)
             i+=1
         n+=2
     if max_count > max_max_count:
         max_max_count = max_count
         max_max_index = max_index
-        method_2_guard = int(key)
+        method_2_guard = int(max_key)
     # print(key+":")
     # print(diff_sum)
     sum_dict[key] = diff_sum
 print(sum_dict)
-
-print("The most sleep for a certain minute belongs to guard ID: "+str(method_2_guard))
-print("That minute with most overlap is: "+str(max_max_index))
-answer2 = method_2_guard*max_max_index
-print("Answer2: "+str(answer2))
 
 max_sum = 0
 final_key = "invalid"
@@ -90,7 +90,16 @@ print("The most minutes belong to guard ID: "+final_key)
 print("The minute with most overlap is: "+str(max_index))
 
 #Question Statement:
+# Find the guard that has the most minutes asleep. What minute does that guard spend asleep the most?
 # What is the ID of the guard you chose multiplied by the minute you chose?
 guard_id = int(final_key)
-answer = guard_id*max_index
-print("Answer: "+str(answer))
+answer1 = guard_id*max_index
+print("Answer1: "+str(answer1))
+
+#Question Statement:
+# Of all guards, which guard is most frequently asleep on the same minute?
+# What is the ID of the guard you chose multiplied by the minute you chose?
+print("The most sleep for a certain minute belongs to guard ID: "+str(method_2_guard))
+print("That minute with most overlap is: "+str(max_max_index))
+answer2 = method_2_guard*max_max_index
+print("Answer2: "+str(answer2))
