@@ -2,4 +2,5 @@
 
 //Day 1
 using ConsoleApp1;
-Solve1A solution1A = new();
+//Solve1A solution1A = new(); 
+Solve1C solution1C = new();
