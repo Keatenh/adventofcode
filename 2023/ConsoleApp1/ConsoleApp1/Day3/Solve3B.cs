@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Day3
 {
-    public class Solve3A
+    public class Solve3B
     {
         public class NumData
         {
             public int value;
             public int indexLow;
             public int indexHigh;
-            
+
             // constructor
             public NumData(int value, int indexLow, int indexHigh)
             {
@@ -23,7 +23,7 @@ namespace ConsoleApp1.Day3
             }
         }
 
-        public Solve3A()
+        public Solve3B()
         {
             // Find all the numbers in the schematic that are adjacent, even diagonally, to any non-period symbol;
             // Take the sum of these numbers.
@@ -39,7 +39,7 @@ namespace ConsoleApp1.Day3
                 List<NumData> numbers = new List<NumData>();
                 List<int> symbols = new List<int>();
 
-                for (int i=0; i< line.Length; i++)
+                for (int i = 0; i < line.Length; i++)
                 {
                     if (line[i] != '.')
                     {
@@ -49,16 +49,17 @@ namespace ConsoleApp1.Day3
                             int startIndex = i;
                             string curNum = "";
                             // Must check we don't go outside the original line length when the number is at the end of the line
-                            while (i < line.Length && int.TryParse(Convert.ToString(line[i]), out int _n2)) {
+                            while (i < line.Length && int.TryParse(Convert.ToString(line[i]), out int _n2))
+                            {
                                 curNum += Convert.ToString(line[i]);
                                 i++; //skip ahead so we don't reprocess the same digits of the current number
                             }
-                            int endIndex = i-1;
+                            int endIndex = i - 1;
                             int num = int.Parse(curNum);
-                            numbers.Add(new NumData(num,startIndex,endIndex));
+                            numbers.Add(new NumData(num, startIndex, endIndex));
                             i--; //take away one to start from correct spot next loop
                         }
-                        else // Note the symbol's index
+                        else if (line[i] == '*')// Note the symbol's index
                         {
                             symbols.Add(i);
                         }
@@ -78,15 +79,17 @@ namespace ConsoleApp1.Day3
                 foreach (int symbolCoord in symbolLocations[i])
                 {
                     //Console.WriteLine(symbolCoord);
+                    List<int> factors = new List<int>();
 
                     foreach (NumData number in numberData[i - 1])
                     {
+                        
                         if (
                             symbolCoord >= number.indexLow - 1 &&
                             symbolCoord <= number.indexHigh + 1
                             )
                         {
-                            total += number.value;
+                            factors.Add(number.value);
                         }
                     }
                     foreach (NumData number in numberData[i])
@@ -96,7 +99,7 @@ namespace ConsoleApp1.Day3
                             symbolCoord <= number.indexHigh + 1
                             )
                         {
-                            total += number.value;
+                            factors.Add(number.value);
                         }
                     }
                     foreach (NumData number in numberData[i + 1])
@@ -106,14 +109,17 @@ namespace ConsoleApp1.Day3
                             symbolCoord <= number.indexHigh + 1
                             )
                         {
-                            total += number.value;
+                            factors.Add(number.value);
                         }
+                    }
+                    if (factors.Count == 2)
+                    {
+                        total += factors[0] * factors[1];
                     }
                 }
             }
 
-            Console.WriteLine("Total of part numbers is: "+total);
+            Console.WriteLine("Total of part numbers is: " + total);
         }
     }
 }
-

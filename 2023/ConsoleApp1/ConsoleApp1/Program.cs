@@ -2,4 +2,4 @@
 
 //Day 1
 using ConsoleApp1.Day3;
-Solve3A solution = new();
+Solve3B solution = new();
