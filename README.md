@@ -13,7 +13,7 @@ https://adventofcode.com/
 | 2020        | [TypeScript](./2020)  | [25 ☆](https://adventofcode.com/2020/leaderboard/self)		|
 | 2021		  | ??					  | [2 ☆](https://adventofcode.com/2021/leaderboard/self)		|
 | 2022	      | [Go](./2022)          | [11 ☆](https://adventofcode.com/2022/leaderboard/self)		|
-| 2023	      | [C#](./2023)		  | [WIP...](https://adventofcode.com/2023/leaderboard/self)	|
+| 2023	      | [C#](./2023)		  | [16 ☆](https://adventofcode.com/2023/leaderboard/self)	|
 
 
 # GitHub Flavored Markdown Spec
