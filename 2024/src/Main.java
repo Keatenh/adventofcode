@@ -1,11 +1,13 @@
-import AOC.Day8;
+import AOC.Day9;
 
 public class Main {
     public static void main(String[] args) {
-        Day8 solution = new Day8();
-        solution.solvePart1("input/Day8/example.txt");
-        solution.solvePart1("input/Day8/input.txt");
-        solution.solvePart2("input/Day8/example.txt");
-        solution.solvePart2("input/Day8/input.txt");
+        Day9 solution = new Day9();
+        solution.solvePart1("input/Day9/example.txt");
+        solution.solvePart1("input/Day9/example2.txt");
+        solution.solvePart1("input/Day9/input.txt");
+        solution.solvePart2("input/Day9/example.txt");
+        solution.solvePart2("input/Day9/example2.txt");
+        solution.solvePart2("input/Day9/input.txt");
     }
 }
