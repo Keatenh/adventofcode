@@ -1,0 +1,24 @@
+# Build artifacts
+*.o
+*.out
+*.exe
+
+# Rust
+**/target/
+# We use this for source files, so make sure it is allowed!
+!bin/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.dSYM/
+
