@@ -1,13 +1,6 @@
 use solver::read_lines;
 
 
-
-
-
-
-
-
-
 fn main() -> std::io::Result<()> {
     // let lines = read_lines("../input/2/example.txt")?;
     let lines = read_lines("../input/2/input.txt")?;
@@ -54,7 +47,7 @@ fn main() -> std::io::Result<()> {
         }
     }
     // 8. return the sum
-    println!("The day 1 sum is {}", sum);
+    println!("The day 2 sum is {}", sum);
     // Your puzzle answer was 31000881061.
     Ok(())
 }

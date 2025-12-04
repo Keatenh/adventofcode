@@ -65,7 +65,7 @@ fn main() -> std::io::Result<()> {
         }
     }
     // 8. return the sum
-    println!("The day 1 sum is {}", sum);
+    println!("The day 2 sum is {}", sum);
     // Your puzzle answer was 46769308485.
     Ok(())
 }
