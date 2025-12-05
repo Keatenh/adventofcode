@@ -11,7 +11,7 @@ fn find_char_indices(s: &str, target: char) -> Vec<usize> {
 fn main() -> std::io::Result<()> {
     //1. read input lines as battery banks
     // let lines = read_lines("../input/3/example.txt")?;
-     let lines = read_lines("../input/3/input.txt")?;
+    let lines = read_lines("../input/3/input.txt")?;
     
     let mut sum: i64 = 0;
 

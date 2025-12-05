@@ -8,6 +8,7 @@
  * Notes: 
  * - Figuring out the &mut notation and that it was needed was challenging and I needed help figuring out how to make the compiler happy
  * - My solution is not very cheap, it took a long time to run so there should be a more optimized algorithm
+ *     Update: Ben suggested using a set + find() method for the vector.contains() and that sounds like it would be much faster :)
  */
 
 use std::collections::HashSet;
