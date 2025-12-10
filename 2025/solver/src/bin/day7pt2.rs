@@ -20,6 +20,11 @@
  * submit on day 8 so that I don't take points credit for it on the leaderboard.
  * My guess is the explanation is in the 'memory' of the previous values contained when we move
  * the visitation sum around.
+ * 
+ * UPDATE #2:
+ * After talking through the problem with Ben, this ^ is right. Specifically, the
+ * "visitation sum" can be conceptualized as the number of paths that led up to that
+ * point/split.
  */
 use solver::read_lines;
 
